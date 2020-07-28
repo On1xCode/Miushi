@@ -15,19 +15,59 @@
 <body>
 
 	<header class="header">
-		<div class="header__inner container">
-			<div class="header__inner-top top-header">
-				<div class="top-header__logo">
-					<img src="img/header/header-logo.svg" alt="Miushi">
+		<div class="header__inner">
+			<div class="header__inner-top">
+				<div class="top-header container">
+					<div class="top-header__logo">
+						<object type="image/svg+xml" data="img/header/header-logo.svg"></object>
+					</div>
+					<div class="top-header__text top-header__text-adress">
+						<a href="#">г. Курск, ул. Ленина, д. 3</a>
+					</div>
+					<div class="top-header__text top-header__text-email">
+						<a href="mailto:78003332222@yandex.ru">78003332222@yandex.ru</a>
+					</div>
+					<div class="top-header__info info">
+						<a href="tel:78003332222" class="info__number">+7 (800) 333 2 222</a>
+						<span class="info__work-time">Работаем с 11.00 до 23.00</span>
+					</div>
+					<a href="#" class="top-header__recall">Обратный звонок</a>
 				</div>
 			</div>
-			<div class="header__inner-bottom bottom-header">
-
+			<div class="header__inner-bottom">
+				<div class="bottom-header container">
+					<nav class="bottom-header__menu">
+						<ul class="menu">
+							<li class="menu__item">
+								<a href="#" class="menu__link menu__link-arrow">
+								Меню
+								</a>
+								<ul class="inner-menu hidden">
+									<li class="inner-menu__item"><a href="#" class="inner-menu__link">Oneoneone</a></li>
+									<li class="inner-menu__item"><a href="#" class="inner-menu__link">Twotwotwo</a></li>
+									<li class="inner-menu__item"><a href="#" class="inner-menu__link">three</a></li>
+								</ul>
+							</li>
+							<li class="menu__item"><a href="#" class="menu__link">Акции и скидки</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Доставка и оплата</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Новости</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+					<div class="bottom-header__user user">
+						<div class="user__option cabinet">
+							<span class="cabinet__ic">Кабинет</span>
+						</div>
+						<div class="user__option cart">
+							<span class="cart__ic">Корзина</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
 
-
-	<script src="js/scripts.min.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>

@@ -3,3 +3,13 @@
   $addSize: $pcSize - $mobSize
   $maxWidth: $maxWidth - 320
   font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}))
+
+//Заготовка под псевдо-элемент
+@mixin pseudo($display: block, $pos: absolute, $content: '')
+  content: $content
+  display: $display
+  position: $pos
+
+//Быстрое центрирование
+@mixin center()
+	transform: translate(-50%, -50%)

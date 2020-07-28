@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -5,7 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,3000,4000,6000,7001,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
 html {
   line-height: 1.15;
@@ -347,6 +348,81 @@ template {
   src: url("../fonts/lemon-tuesday.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon/icomoon.eot?kt84vi");
+  src: url("../fonts/icomoon/icomoon.eot?kt84vi#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?kt84vi") format("truetype"), url("../fonts/icomoon/icomoon.woff?kt84vi") format("woff"), url("../fonts/icomoon/icomoon.svg?kt84vi#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-vk:before {
+  content: "";
+}
+
+.icon-keyboard_arrow_right:before {
+  content: "";
+}
+
+.icon-keyboard_arrow_left:before {
+  content: "";
+}
+
+.icon-shopping-cart:before {
+  content: "";
+}
+
+.icon-users:before {
+  content: "";
+}
+
+.icon-cheveron-down:before {
+  content: "";
+}
+
+.icon-arrow-thin-right:before {
+  content: "";
+}
+
+.icon-arrow-thin-left:before {
+  content: "";
+}
+
+.icon-mail-envelope-closed:before {
+  content: "";
+}
+
+.icon-location:before {
+  content: "";
+}
+
+.icon-fire:before {
+  content: "";
+}
+
+.icon-facebook:before {
+  content: "";
+}
+
+.icon-instagram:before {
+  content: "";
+}
+
 ::-webkit-input-placeholder {
   color: #666;
 }
@@ -368,12 +444,12 @@ template {
 }
 
 ::-moz-selection {
-  background-color: orange;
+  background-color: #fd4f10;
   color: #fff;
 }
 
 ::selection {
-  background-color: orange;
+  background-color: #fd4f10;
   color: #fff;
 }
 
@@ -389,18 +465,249 @@ input:required:valid, textarea:required:valid {
   border-color: green;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-size: 16px;
+  font-size: 14px;
   min-width: 320px;
   position: relative;
-  line-height: 1.65;
-  font-family: 'Roboto', sans-serif;
+  line-height: 20px;
+  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
-  color: #333;
+  color: #000;
 }
 
 .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.header {
+  background-color: #fff;
+}
+
+.header__inner-bottom {
+  border-top: 1px solid #f2f2f2;
+}
+
+.top-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-header__text {
+  padding-left: 22px;
+}
+
+.top-header__text-adress, .top-header__text-email {
+  position: relative;
+}
+
+.top-header__text-adress::before, .top-header__text-email::before {
+  position: absolute;
+  font-family: 'icomoon';
+  top: 0;
+  left: -3px;
+  font-size: 22px;
+  color: #84c604;
+}
+
+.top-header__text-adress::before {
+  content: "\e947";
+}
+
+.top-header__text-email::before {
+  content: "\e908";
+}
+
+.top-header__recall {
+  text-transform: uppercase;
+  color: #1fba0a;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  padding: 8px 16px;
+  border: 1px solid #1fba0a;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+@media (min-width: 1000px) {
+  .top-header__recall:hover {
+    background-color: #1fba0a;
+    color: #fff;
+  }
+  .top-header__recall:active {
+    background-color: #fd4f10;
+    border-color: #fd4f10;
+    color: #fff;
+  }
+}
+
+.info {
+  font-weight: bold;
+}
+
+.info__number {
+  font-size: 18px;
+}
+
+.info__work-time {
+  font-size: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu__link {
+  padding: 0 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.menu__link-arrow {
+  padding: 0 45px 0 25px;
+  position: relative;
+}
+
+.menu__link-arrow::before {
+  content: "\e905";
+  position: absolute;
+  font-family: 'icomoon';
+  top: 50%;
+  transform: translate(-50%, -50%);
+  right: 5px;
+  font-size: 22px;
+  color: #000;
+}
+
+@media (min-width: 1000px) {
+  .menu__link:hover {
+    background-color: #84c604;
+    color: #fff;
+  }
+}
+
+@media (min-width: 1000px) {
+  .menu__link:hover.menu__link-arrow::before {
+    color: #fff;
+  }
+}
+
+.bottom-header nav,
+.menu,
+.menu__item {
+  height: 100%;
+}
+
+.menu__item {
+  position: relative;
+}
+
+.user {
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.user__option {
+  padding: 0 25px 0 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+@media (min-width: 1000px) {
+  .user__option:hover {
+    background-color: #f2f2f2;
+  }
+  .user__option:active {
+    background-color: #d9d9d9;
+  }
+}
+
+.user__option::before {
+  position: absolute;
+  font-family: 'icomoon';
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 25px;
+  font-size: 23px;
+  color: #84c604;
+}
+
+.cabinet::before {
+  content: "\e904";
+}
+
+.cart::before {
+  content: "\e903";
+}
+
+.inner-menu {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fff;
+  width: 100%;
+}
+
+.inner-menu__item {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.inner-menu__link {
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  transition: all 0.2s;
+  height: 100%;
+  width: 100%;
+  line-height: 48px;
+  text-align: center;
+}
+
+.inner-menu__link:hover {
+  background-color: #84c604;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
 }
