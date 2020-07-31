@@ -6,6 +6,9 @@
 @import fonts
 @import icomoon
 
+*
+	outline: none !important
+
 ::placeholder
 	color: #666
 
@@ -68,7 +71,7 @@ body
 		&-adress::before,
 		&-email::before
 			position: absolute
-			font-family: 'icomoon'
+			font-family: "icomoon"
 			top: 0
 			left: -3px
 			font-size: 22px
@@ -434,8 +437,9 @@ body
 		&:active
 			background-color: darken($accent, 5%)
 
-.slick-dots
+.intro .slick-dots
 	display: flex
+	align-items: center
 	li
 		margin: 0 12px 0 12px
 		button
@@ -624,3 +628,223 @@ body
 	display: flex
 	flex-direction: column
 	margin-bottom: 20px
+
+// ===== Sets =====
+.sets
+	margin-top: 50px
+.pd
+	padding-top: 30px
+	padding-bottom: 70px
+
+.section__title
+	font-family: "Lemon Tuesday", sans-serif
+	text-align: center
+	font-size: 60px
+	color: $dark-blue
+	margin-bottom: 50px
+	span
+		position: relative
+	span::before,
+	span::after
+		content: ""
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		width: 74px
+		height: 27px
+		display: block
+	span::before
+		left: -95px
+		background-image: url(../img/icons/section-title-left.png)
+	span::after
+		right: -95px
+		background-image: url(../img/icons/section-title-right.png)
+	@media (max-width: $maxWidth + px)
+		@include adp-font(60, 44)
+
+.products-carousel
+	position: relative
+	&__body
+		display: flex
+		justify-content: space-between
+		width: 100%
+	&__control
+
+.carousel-item
+	border-radius: 10px
+	box-shadow: 0px 4px 29px 0px rgba(0, 0, 0, 0.08)
+	max-width: 265px
+	overflow: hidden
+	text-align: center
+	margin: 0 15px
+	outline: none
+	&__image
+		height: 230px
+		overflow: hidden
+		img
+			margin: 0 auto
+			// height: 100%
+			// width: 100%
+			// object-fit: cover
+	&__inner
+		padding: 25px
+	&__name
+		font-size: 20px
+		font-weight: bold
+	&__info
+		font-size: 12px
+		font-weight: 300
+	&__wrap
+		display: flex
+		justify-content: space-between
+		margin-top: 20px
+		margin-bottom: 20px
+	&__price
+		font-family: "Roboto Slab", sans-serif
+		font-size: 22px
+		font-weight: bold
+	&__btn
+		font-size: 14px
+		width: 100%
+		padding: 12px 10px 12px 35px
+		text-align: left
+		position: relative
+		&::after
+			font-family: "icomoon"
+			content: "\e903"
+			display: block
+			position: absolute
+			top: 45%
+			right: 30px
+			transform: translate(-50%,-50%)
+			font-size: 20px
+
+.counter
+	display: flex
+	justify-content: space-between
+	align-items: center
+	min-width: 65px
+	&__btn
+		width: 13px
+		height: 13px
+		border: 2px solid #c2c2c2
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		cursor: pointer
+		&-minus
+			line-height: 6px
+
+.carousel-control
+	position: absolute
+	bottom: -50px
+	left: 50%
+	transform: translateX(-50%)
+	display: flex
+	justify-content: center
+	align-items: center
+	&__btn
+		margin: 0 25px
+		width: 27px
+		height: 20px
+		cursor: pointer
+		span
+			width: 100%
+			height: 100%
+			display: block
+			position: relative
+			&::before
+				color: #b3b3b3
+				font-family: "icomoon"
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				transition: color 0.2s
+		&-prev span
+			&::before
+				content: "\e907"
+				left: 0
+		&-next span
+			&::before
+				content: "\e906"
+				right: 0
+
+		&.slick-disabled span::before
+			color: #808080
+
+	&__dots
+		.slick-dots
+			display: flex
+			li
+				display: flex
+				align-items: center
+				margin: 0 11px
+				button
+					font-size: 0
+					width: 8px
+					height: 8px
+					border-radius: 50%
+					background: #b3b3b3
+					outline: none
+					transition: all 0.2s
+					padding: 0
+					cursor: pointer
+					border: none
+			li.slick-active
+				button
+					background: $light-green
+
+.popular-dish,
+.veg-dish,
+.spicy-dish
+	position: relative
+	&::after
+		position: absolute
+		top: 10px
+		right: 10px
+		z-index: 10
+		width: 50px
+		height: 50px
+		font-family: "Roboto Slab"
+		font-weight: bold
+		font-size: 14px
+		color: #fff
+		display: flex
+		align-items: center
+		justify-content: center
+		box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.39)
+		border-radius: 50%
+		// color: #fff
+
+.popular-dish::after
+	content: "хит"
+	color: #fff
+	text-transform: uppercase
+	background: linear-gradient(9deg, #b61f24 0%, #dd2024 100%)
+
+.spicy-dish::after
+	font-family: "icomoon"
+	content: "\e9a9"
+	background: linear-gradient(9deg, #b61f24 0%, #dd2024 100%)
+	font-size: 25px
+
+.veg-dish::after
+	content: "veg"
+	background: linear-gradient(9deg, #1c6d03 0%, #58a505 100%)
+
+.new-dish
+	position: relative
+	&::before
+		content: "new"
+		position: absolute
+		left: -20px
+		top: 10px
+		height: 23px
+		width: 90px
+		z-index: 10
+		background-color: $light-green
+		font-family: "Roboto Slab"
+		font-weight: bold
+		color: #fff
+		transform: rotate(-40deg)

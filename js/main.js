@@ -67,14 +67,13 @@ $(document).ready(() => {
   });
 
 
-  dynamicAdaptive(920, ".user", ".top-header", ".bottom-header");
 
   $(".carousel__body").slick({
     infinite: true,
     prevArrow: $(".carousel__btn-prev"),
     nextArrow: $(".carousel__btn-next"),
-    dots: true,
     appendDots: $(".carousel__dots"),
+    dots: true,
     responsive: [
       {
         breakpoint: 1425,
@@ -83,14 +82,34 @@ $(document).ready(() => {
         }
       }
     ]
-    // fade: true
-
   });
 
+  $(".sets").find(".products-carousel__body").slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    infinite: false,
+    prevArrow: $(".sets").find(".carousel-control__btn-prev"),
+    nextArrow: $(".sets").find(".carousel-control__btn-next"),
+    appendDots: $(".sets").find(".carousel-control__dots"),
+    // variableWidth: true,
+    dots: true
+  });
+
+  $(".rolls").find(".products-carousel__body").slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    infinite: false,
+    prevArrow: $(".rolls").find(".carousel-control__btn-prev"),
+    nextArrow: $(".rolls").find(".carousel-control__btn-next"),
+    appendDots: $(".rolls").find(".carousel-control__dots"),
+    // variableWidth: true,
+    dots: true
+  });
+
+
+  dynamicAdaptive(920, ".user", ".top-header", ".bottom-header");
 });
 
 $(window).on("resize", () => {
   dynamicAdaptive(920, ".user", ".top-header", ".bottom-header");
-
-
 });
