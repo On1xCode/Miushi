@@ -1,14 +1,13 @@
-const dynamicAdaptive = (breakPoint, firstElement, secondElement, thirdElement) => {
-  // let parent = $(firstElement).attr("class");
+const dynamicAdaptive = (breakPoint, element, newParent, initialParent) => {
+  // let parent = $(element).attr("class");
   // parent.substring(0, parent.indexOf(" "));
   if (document.body.clientWidth < breakPoint) {
-    $(firstElement).appendTo($(secondElement));
+    $(element).appendTo($(newParent));
   } else {
-    $(firstElement).appendTo($(thirdElement));
+    $(element).appendTo($(initialParent));
   }
 }
 $(document).ready(() => {
-
 
   $("#recall__open-btn").on("click", () => {
     $(".popup, .recall").removeClass("hidden");
@@ -62,8 +61,6 @@ $(document).ready(() => {
     setTimeout(() => {
       $(".popup, .popup__background").addClass("hidden");
     }, 200);
-
-
   });
 
 
@@ -84,7 +81,7 @@ $(document).ready(() => {
     ]
   });
 
-  const sliderSections = [".sets", ".rolls"];
+  const sliderSections = [".sets", ".rolls", ".pizza"];
 
   $.each(sliderSections, (i, element) => {
     $(element).find(".products-carousel__body").slick({

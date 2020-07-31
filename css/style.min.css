@@ -1445,10 +1445,16 @@ body {
 .carousel-item__image {
   height: 230px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-item__image img {
   margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .carousel-item__inner {
@@ -1458,6 +1464,9 @@ body {
 .carousel-item__name {
   font-size: 20px;
   font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .carousel-item__info {
