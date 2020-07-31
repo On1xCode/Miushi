@@ -86,24 +86,76 @@ $(document).ready(() => {
 
   $(".sets").find(".products-carousel__body").slick({
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     infinite: false,
     prevArrow: $(".sets").find(".carousel-control__btn-prev"),
     nextArrow: $(".sets").find(".carousel-control__btn-next"),
     appendDots: $(".sets").find(".carousel-control__dots"),
-    // variableWidth: true,
-    dots: true
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1170,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 936,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          dots: false
+        }
+      }
+    ]
   });
 
   $(".rolls").find(".products-carousel__body").slick({
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     infinite: false,
     prevArrow: $(".rolls").find(".carousel-control__btn-prev"),
     nextArrow: $(".rolls").find(".carousel-control__btn-next"),
     appendDots: $(".rolls").find(".carousel-control__dots"),
-    // variableWidth: true,
-    dots: true
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1170,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 936,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          dots: false
+        }
+      }
+    ]
   });
 
 
