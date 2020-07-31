@@ -7,7 +7,7 @@
 	<meta name="description" content="Your description here">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" type="image/png" href="img/favicons/favicon.png">
-	<link rel="apple-touch-icon" href="img/favicons/apple-touch-favicon.png"/>
+	<link rel="apple-touch-icon" href="img/favicons/apple-touch-favicon.png">
 	<meta property="og:image" content="img/@1x/preview.jpg">
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -18,8 +18,14 @@
 		<div class="header__inner">
 			<div class="header__inner-top">
 				<div class="top-header container">
+					<div class="burger">
+						<span></span>
+					</div>
 					<div class="top-header__logo">
-						<object type="image/svg+xml" data="img/header/header-logo.svg"></object>
+						<a href="index.html">
+							<object class="desktop-logo" type="image/svg+xml" data="img/header/header-logo.svg"></object>
+							<object class="mobile-logo" type="image/svg+xml" data="img/header/header-mobile-logo.svg"></object>
+						</a>
 					</div>
 					<div class="top-header__text top-header__text-adress">
 						<a href="#">г. Курск, ул. Ленина, д. 3</a>
@@ -31,23 +37,14 @@
 						<a href="tel:78003332222" class="info__number">+7 (800) 333 2 222</a>
 						<span class="info__work-time">Работаем с 11.00 до 23.00</span>
 					</div>
-					<a href="#" class="top-header__recall">Обратный звонок</a>
+					<a href="#" class="top-header__recall recall-bnt" id="recall__open-btn">Обратный звонок</a>
 				</div>
 			</div>
 			<div class="header__inner-bottom">
 				<div class="bottom-header container">
 					<nav class="bottom-header__menu">
 						<ul class="menu">
-							<li class="menu__item">
-								<a href="#" class="menu__link menu__link-arrow">
-								Меню
-								</a>
-								<ul class="inner-menu hidden">
-									<li class="inner-menu__item"><a href="#" class="inner-menu__link">Oneoneone</a></li>
-									<li class="inner-menu__item"><a href="#" class="inner-menu__link">Twotwotwo</a></li>
-									<li class="inner-menu__item"><a href="#" class="inner-menu__link">three</a></li>
-								</ul>
-							</li>
+							<li class="menu__item"><a href="#" class="menu__link menu__link-arrow">Меню</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Акции и скидки</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Доставка и оплата</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Новости</a></li>
@@ -56,10 +53,10 @@
 					</nav>
 					<div class="bottom-header__user user">
 						<div class="user__option cabinet">
-							<span class="cabinet__ic">Кабинет</span>
+							<span class="user__option-ic">Кабинет</span>
 						</div>
-						<div class="user__option cart">
-							<span class="cart__ic">Корзина</span>
+						<div class="user__option cart" id="popup__open-btn">
+							<span class="user__option-ic">Корзина</span>
 						</div>
 					</div>
 				</div>
@@ -67,7 +64,89 @@
 		</div>
 	</header>
 
+	<div class="popup hidden">
+		<div class="popup__background hidden"></div>
+		<div class="popup__recall recall hidden">
+			<div class="recall__close-btn popup__close-btn" id="recall__close-btn"><span></span></div>
+			<h3 class="recall__title popup__title">Введите ваши данные и мы вам перезвоним в течении 5-ти минут!</h3>
+			<form action="POST" class="popup__form">
+				<div class="form-group">
+					<label for="name">Ваше имя:</label>
+					<input type="text" name="name" id="recall-name">
+				</div>
+				<div class="form-group">
+					<label for="phone">Ваш номер телефона:</label>
+					<input type="phone" name="phone" id="recall-phone">
+				</div>
+				<p class="popup__form-error"></p>
+				<button type="button" class="btn popup__form-btn" id="recall-btn">Отправить</button>
+			</form>
+		</div>
+		<div class="popup__basket basket">
+			<div class="basket__close-btn popup__close-btn" id="basket__close-btn"><span></span></div>
+		</div>
+		<div class="popup__menu">
+			<div class="menu__close-btn popup__close-btn" id="menu__close-btn"><span></span></div>
+			<nav class="popup__menu-nav">
+				<ul class="menu">
+					<li class="menu__item"><a href="#" class="menu__link menu__link-arrow">Меню</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Акции и скидки</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Доставка и оплата</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Новости</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="info popup__info">
+				<a href="tel:78003332222" class="info__number">+7 (800) 333 2 222</a>
+				<span class="info__work-time">Работаем с 11.00 до 23.00</span>
+			</div>
+			<a href="#" class="recall-bnt popup__recall-btn" id="recall__open-btn">Обратный звонок</a>
+			<div class="top-header__text top-header__text-adress popup-pos">
+				<a href="#">г. Курск, ул. Ленина, д. 3</a>
+			</div>
+			<div class="top-header__text top-header__text-email popup-mail">
+				<a href="mailto:78003332222@yandex.ru">78003332222@yandex.ru</a>
+			</div>
+		</div>
+	</div>
+
+	<section class="intro">
+		<div class="intro__carousel carousel">
+			<div class="carousel__body">
+				<div class="slide">
+					<div class="container">
+						<h1 class="slide__title">Счастливые <br> часы</h1>
+						<p class="slide__text">с 11:00 до 16:00 в будние дни</p>
+						<a href="#" class="slide__btn btn">Подробнее</a>
+					</div>
+				</div>
+				<div class="slide">
+					<div class="container">
+						<h1 class="slide__title">Счастливые <br> часы</h1>
+						<p class="slide__text">с 11:00 до 16:00 в будние дни</p>
+						<a href="#" class="slide__btn btn">Подробнее</a>
+					</div>
+				</div>
+				<div class="slide">
+					<div class="container">
+						<h1 class="slide__title">Счастливые <br> часы</h1>
+						<p class="slide__text">с 11:00 до 16:00 в будние дни</p>
+						<a href="#" class="slide__btn btn">Подробнее</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel__dots"></div>
+			<div class="carousel__btn carousel__btn-prev"><span></span></div>
+			<div class="carousel__btn carousel__btn-next"><span></span></div>
+		</div>
+	</section>
+
+
+
+
+
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
+
 </html>
