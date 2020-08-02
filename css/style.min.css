@@ -1380,7 +1380,7 @@ body {
 
 .pd {
   padding-top: 30px;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
 }
 
 .section__title {
@@ -1388,7 +1388,7 @@ body {
   text-align: center;
   font-size: 60px;
   color: #32505a;
-  margin-bottom: 50px;
+  margin-bottom: 75px;
 }
 
 .section__title span {
@@ -1427,8 +1427,6 @@ body {
 }
 
 .products-carousel__body {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -1522,6 +1520,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 0;
 }
 
 .counter__btn-minus {

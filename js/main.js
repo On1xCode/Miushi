@@ -1,22 +1,101 @@
 const dynamicAdaptive = (breakPoint, element, newParent, initialParent) => {
-  // let parent = $(element).attr("class");
-  // parent.substring(0, parent.indexOf(" "));
   if (document.body.clientWidth < breakPoint) {
     $(element).appendTo($(newParent));
   } else {
     $(element).appendTo($(initialParent));
   }
 }
+
+
+$(window).on("load", () => {
+
+  $(".carousel__body").slick({
+    infinite: true,
+    prevArrow: $(".carousel__btn-prev"),
+    nextArrow: $(".carousel__btn-next"),
+    appendDots: $(".carousel__dots"),
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1425,
+        settings: {
+          arrows: false
+        }
+      }
+    ]
+  });
+
+  const sliderSections = [".sets", ".rolls", ".pizza"];
+
+  $.each(sliderSections, (i, el) => {
+    $(el).find(".products-carousel__body").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      prevArrow: $(el).find(".carousel-control__btn-prev"),
+      nextArrow: $(el).find(".carousel-control__btn-next"),
+      appendDots: $(el).find(".carousel-control__dots"),
+      dots: false,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 460,
+          settings: {
+            dots: true
+          }
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 2,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 870,
+          settings: {
+            slidesToShow: 3,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 1130,
+          settings: {
+            slidesToShow: 4,
+            dots: true
+          }
+        }
+      ]
+    });
+  });
+
+
+
+});
+
+
+
+
 $(document).ready(() => {
 
-  $("#recall__open-btn").on("click", () => {
+
+  $("#recall__open-btn, #menu-recall__open-btn").on("click", (event) => {
+    event.preventDefault();
     $(".popup, .recall").removeClass("hidden");
-    $(".popup__background, .popup__recall").fadeIn();
+    if ($(".popup__menu").hasClass("active")) {
+      // console.log($(".popup__menu"));
+      $(".popup__menu").removeClass("active");
+    }
+    setTimeout(() => {
+      $(".popup__background, .popup__recall").fadeIn();
+    }, 150);
   });
 
   $("#recall__close-btn").on("click", () => {
     $(".popup__background, .recall").fadeOut();
-    $(".recall, .popup").addClass("hidden");
+    setTimeout(() => {
+      $(".recall, .popup").addClass("hidden");
+    }, 200)
   });
 
   $("#recall-btn").on("click", () => {
@@ -64,68 +143,31 @@ $(document).ready(() => {
   });
 
 
+  // counter 
+  let counter = $(".counter");
+  $.each(counter, (i, element) => {
+    let counterElements = $(element).children();
+    let counterButtons = [counterElements[0], counterElements[2]];
+    let counterNumber = counterElements[1];
+    let counterValue = parseInt($(counterElements[1]).text());
 
-  $(".carousel__body").slick({
-    infinite: true,
-    prevArrow: $(".carousel__btn-prev"),
-    nextArrow: $(".carousel__btn-next"),
-    appendDots: $(".carousel__dots"),
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 1425,
-        settings: {
-          arrows: false
+    $.each(counterButtons, (i, button) => {
+      $(button).on("click", () => {
+        if ($(button).hasClass("counter__btn-minus") && counterValue > 0) {
+          $(counterNumber).text(--counterValue)
+        } else if ($(button).hasClass("counter__btn-plus")) {
+          $(counterNumber).text(++counterValue)
         }
-      }
-    ]
-  });
-
-  const sliderSections = [".sets", ".rolls", ".pizza"];
-
-  $.each(sliderSections, (i, element) => {
-    $(element).find(".products-carousel__body").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      infinite: false,
-      prevArrow: $(element).find(".carousel-control__btn-prev"),
-      nextArrow: $(element).find(".carousel-control__btn-next"),
-      appendDots: $(element).find(".carousel-control__dots"),
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 1170,
-          settings: {
-            slidesToShow: 3,
-          }
-        },
-        {
-          breakpoint: 936,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 625,
-          settings: {
-            slidesToShow: 1,
-          }
-        },
-        {
-          breakpoint: 450,
-          settings: {
-            slidesToShow: 1,
-            dots: false
-          }
-        }
-      ]
+      });
     });
   });
-
-
-  dynamicAdaptive(920, ".user", ".top-header", ".bottom-header");
 });
 
-$(window).on("resize", () => {
+
+
+
+
+$(window).on("load resize", () => {
   dynamicAdaptive(920, ".user", ".top-header", ".bottom-header");
+
 });
