@@ -25,7 +25,7 @@ $(window).on("load", () => {
     ]
   });
 
-  const sliderSections = [".sets", ".rolls", ".pizza"];
+  const sliderSections = [".sets", ".rolls", ".pizza", ".wok"];
 
   $.each(sliderSections, (i, el) => {
     $(el).find(".products-carousel__body").slick({
@@ -161,9 +161,14 @@ $(document).ready(() => {
       });
     });
   });
+
+  $(".quantity-input").on("change input", function () {
+    console.log('nice');
+  });
+
+
+
 });
-
-
 
 
 

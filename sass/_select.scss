@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$active-el: yellow;
+$select-bg: #fff;
+$select-color: #333;
+
+body {
+   font-family: "Roboto", sans-serif;
+   color: #333;
+}
+
+.app {
+   padding-top: 200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.wrap {
+   width: 350px;
+}
+
+.fa {
+   color: $select-color;
+
+}
+
+
+.select {
+   width: 100%;
+   position: relative;
+   // .select__input
+
+   &.open {
+      .select__dropdown {
+         display: block;
+      }
+      .select__input {
+         border-bottom: none;
+      }
+   }
+   // .select.open
+
+   &__input {
+      background-color: $select-bg;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      padding: 7px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+   }
+   
+   // .select__dropdown
+
+   &__dropdown {
+      background-color: $select-bg;
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+      max-height: 170px;
+      overflow-y: auto;
+
+   }
+ 
+
+   // .select__list
+
+   &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+   }
+
+   // .select__item
+
+   &__item {
+      padding: 7px 12px;
+      border-bottom: 1px solid #cccccc;
+      transition: background-color 0.15s;
+      &:last-child {
+         border-bottom: none;
+      }
+      &:hover {
+         background-color: #eee;
+         cursor: pointer;
+
+      }
+   }
+
+
+   
+}
+.selected {
+   background-color: $active-el;
+}

@@ -1,0 +1,168 @@
+{
+   "sets": {
+      "0001": {
+         "name": "Сет №10",
+         "foodValue": "72 шт. | 1560 г. | 1700 Kkal",
+         "price": 2050,
+         "image": "img/sets/set-1.jpg",
+         "popular": true,
+         "vegetarian": true,
+         "new": true,
+         "spicy": true
+      },
+      "0002": {
+         "name": "Сет №8",
+         "foodValue": "24 шт. | 960 г. | 800 Kkal",
+         "price": 1590,
+         "image": "img/sets/set-2.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": true,
+         "spicy": false
+      },
+      "0003": {
+         "name": "Минисет №5",
+         "foodValue": "14 шт. | 450 г. | 400 Kkal",
+         "price": 510,
+         "image": "img/sets/set-3.jpg",
+         "popular": true,
+         "vegetarian": false,
+         "new": true,
+         "spicy": false
+      },
+      "0004": {
+         "name": "Сет №6",
+         "foodValue": "16 шт. | 460 г. | 490 Kkal",
+         "price": 400,
+         "image": "img/sets/set-4.jpg",
+         "popular": false,
+         "vegetarian": true,
+         "new": false,
+         "spicy": false
+      },
+      "0005": {
+         "name": "Сет №10",
+         "foodValue": "72 шт. | 1560 г. | 1700 Kkal",
+         "price": 2050,
+         "image": "img/sets/set-1.jpg",
+         "popular": true,
+         "vegetarian": false,
+         "new": false,
+         "spicy": true
+      },
+      "0006": {
+         "name": "Сет №8",
+         "foodValue": "24 шт. | 960 г. | 800 Kkal",
+         "price": 1590,
+         "image": "img/sets/set-2.jpg",
+         "popular": false,
+         "vegetarian": true,
+         "new": false,
+         "spicy": false
+      },
+      "0007": {
+         "name": "Минисет №5",
+         "foodValue": "14 шт. | 450 г. | 400 Kkal",
+         "price": 510,
+         "image": "img/sets/set-3.jpg",
+         "popular": true,
+         "vegetarian": false,
+         "new": false,
+         "spicy": true
+      },
+      "0008": {
+         "name": "Сет №6",
+         "foodValue": "16 шт. | 460 г. | 490 Kkal",
+         "price": 400,
+         "image": "img/sets/set-4.jpg",
+         "popular": false,
+         "vegetarian": true,
+         "new": false,
+         "spicy": false
+      }
+   },
+   "rolls": {
+      "1001": {
+         "name": "Кунсей батакон",
+         "foodValue": "8 шт. | 250 г. | 350 Kkal",
+         "price": 260,
+         "image": "img/rolls/roll-1.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "1002": {
+         "name": "Унаги диру",
+         "foodValue": "8 шт. | 960 г. | 800 Kkal",
+         "price": 280,
+         "image": "img/rolls/roll-2.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "1003": {
+         "name": "Филадельфия",
+         "foodValue": "8 шт. | 450 г. | 400 Kkal",
+         "price": 280,
+         "image": "img/rolls/roll-3.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "1004": {
+         "name": "Мексиканский",
+         "foodValue": "8 шт. | 460 г. | 490 Kkal",
+         "price": 290,
+         "image": "img/rolls/roll-4.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      }
+   },
+   "pizza": {
+      "2001": {
+         "name": "Баварская",
+         "foodValue": "33 см | 680 г. | 1350 Kkal",
+         "price": 480,
+         "image": "img/pizza/pizza-1.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "2002": {
+         "name": "Вегетарианская",
+         "foodValue": "33 см | 755 г. | 1800 Kkal",
+         "price": 380,
+         "image": "img/pizza/pizza-2.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "2003": {
+         "name": "Пепперони",
+         "foodValue": "33 см | 615 г. | 1400 Kkal",
+         "price": 450,
+         "image": "img/pizza/pizza-3.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      },
+      "2004": {
+         "name": "Классическая",
+         "foodValue": "33 см | 590 г. | 1490 Kkal",
+         "price": 390,
+         "image": "img/pizza/pizza-4.jpg",
+         "popular": false,
+         "vegetarian": false,
+         "new": false,
+         "spicy": false
+      }
+   }
+}
