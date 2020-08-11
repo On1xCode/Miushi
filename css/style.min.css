@@ -1760,15 +1760,33 @@ body {
   background-position: center center;
 }
 
-.promotion__tabs-buttons {
+.tabs__controll {
   display: flex;
+  justify-content: flex-start;
 }
 
-.tab-btn {
+.tabs__controll-btn {
   margin-right: 60px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+  color: #999999;
 }
 
-.tab-btn.active {
+.tabs__controll-btn.active {
   color: #fd4f10;
+}
+
+.tabs__content {
+  margin-top: 50px;
+}
+
+.tabs__content-item {
+  display: none;
+}
+
+.tabs__content-item.active {
+  display: block;
 }

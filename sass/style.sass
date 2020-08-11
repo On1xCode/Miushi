@@ -926,14 +926,27 @@ body
 	background-image: url(../img/promotion.jpg)
 	background-size: cover
 	background-position: center center
-	&__tabs
 
-		&-buttons
-			display: flex
+.tabs
 
-.tab-btn
-	margin-right: 60px
-	cursor: pointer
+	&__controll
+		display: flex
+		justify-content: flex-start
+		&-btn
+			margin-right: 60px
+			background: none
+			border: none
+			font-size: 18px
+			font-weight: 600
+			cursor: pointer
+			color: #999999
+		&-btn.active
+			color: $accent
 
-.tab-btn.active
-	color: $accent
+	&__content
+		margin-top: 50px
+		&-item
+			display: none
+
+		&-item.active
+			display: block

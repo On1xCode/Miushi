@@ -605,19 +605,42 @@
 
 	<section class="promotion pd">
 		<div class="container">
-			<div class="promotion__tabs">
-				<div class="promotion__tabs-buttons">
-					<div class="tab-btn active">Новинки</div>
-					<div class="tab-btn">Акции</div>
+			<div class="promotion__tabs tabs">
+				<div class="tabs__control">
+					<button class="tabs__controll-btn active">Новинки</button>
+					<button class="tabs__controll-btn">Акции</button>
 				</div>
-				<div class="promotion__tabs-bodies">
-
+				<div class="tabs__content">
+					<div class="tabs__content-item active">
+						<div class="products-carousel">
+							<div class="products-carousel__body rolls-products">
+								<!-- JS output -->
+							</div>
+							<div class="products-carousel__control carousel-control">
+								<div class="carousel-control__btn carousel-control__btn-prev"><span></span></div>
+								<div class="carousel-control__dots"></div>
+								<div class="carousel-control__btn carousel-control__btn-next"><span></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="tabs__content-item">
+						<div class="products-carousel">
+							<div class="products-carousel__body sets-products">
+								<!-- JS output -->
+							</div>
+							<div class="products-carousel__control carousel-control">
+								<div class="carousel-control__btn carousel-control__btn-prev"><span></span></div>
+								<div class="carousel-control__dots"></div>
+								<div class="carousel-control__btn carousel-control__btn-next"><span></span></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<button class="btn carousel-item__btn">В корзину</button>
 
+	
 
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>
